@@ -19,8 +19,9 @@ First you will need to initialize/create the application. Create the directory w
 2. Change Entry Point to "app.js"
 3. Enter till asked if correct (yes)
 4. Touch "app.js"
-5. Run 'npm install express'
-6. code . to open your IDE
+5. Touch '.gitignore' and add node_modules
+6. Run 'npm install express'
+7. code . to open your IDE
 
 ### In app.js
 Ok, so now you have the app started and your main JS file in there. Go into that app.js file and paste in:
