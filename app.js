@@ -1,24 +1,31 @@
-const express = require("express")
-const path = require("path")
+const express = require("express");
+const logger = require("morgan");
+const path = require("path");
 
-const app = express()
+const app = express();
 
-app.set("views", path.join(__dirname, "views"))
-app.set("view engine", "ejs")
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.static(path.join(__dirname, "public")))
+const PORT = process.env.PORT || 3000;
 
-const PORT = process.env.PORT || 3000
+app.use(logger("combined"));
+app.use(express.json());
 
-app.get("/", function(req, res){
-    res.render("index")
-})
+let teamArray = [{ id: 1, teamName: "Lakers" }];
 
-app.post("/", function(req, res){
-    res.send("post path!")
-})
+app.get("/", function (req, res) {
+	res.render("index");
+});
 
-app.listen(PORT, function(){
-    console.log(`Server is now running on PORT: ${PORT}`)
-})
+app.post("/", function (req, res) {
+	// res.send("post path!");
+	console.log(req.body);
+	res.json({ team: teamArray, firstName: "Yup" });
+});
+
+app.listen(PORT, function () {
+	console.log(`Server is now running on PORT: ${PORT}`);
+});
