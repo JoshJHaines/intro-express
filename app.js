@@ -32,9 +32,13 @@ app.get("/get-team-array", function(req, res){
 })
 
 app.get("/get-team-id/:id", function(req, res){
-    console.log(req.params)
-    console.log(req.params.id)
-    res.json({params: req.params, id: req.params.id})
+    console.log(`Params: ${req.params.id}`)
+    console.log(teamArray)
+    for (let i = 0; i < teamArray.length; i++){
+        if (req.params.id == teamArray[i].id){
+            res.json({id: teamArray[i].id, teamName: teamArray[i].teamName})
+        }
+    }
 })
 
 app.post("/", function (req, res) {
