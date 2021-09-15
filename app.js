@@ -15,6 +15,10 @@ app.get("/", function(req, res){
     res.render("index")
 })
 
+app.post("/", function(req, res){
+    res.send("post path!")
+})
+
 app.listen(PORT, function(){
     console.log(`Server is now running on PORT: ${PORT}`)
 })
