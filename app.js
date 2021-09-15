@@ -11,6 +11,10 @@ app.set("view engine", "ejs")
 
 const PORT = process.env.PORT || 3000
 
+app.get("/", function(req, res){
+    res.render("index")
+})
+
 app.listen(PORT, function(){
     console.log(`Server is now running on PORT: ${PORT}`)
 })
