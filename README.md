@@ -41,10 +41,10 @@ This should give you what you need to have a sever and run it on port 3000 in yo
 
 ### In Terminal
 1. run 'nodemon'
+2. run 'npm i ejs'
 
 ### Browser
 1. http://localhost:3000/
-2. You should see a page with "hi class"
 
 
 ## Create Git Repo
