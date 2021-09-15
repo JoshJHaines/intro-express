@@ -7,7 +7,7 @@
 * [Node](https://nodejs.org/en/download/)
 * [Nodemon](https://www.npmjs.com/package/nodemon)
 * [GitHub](https://www.github.com)
-* Express
+* [Express](https://expressjs.com/)
 
 
 ## Overview
@@ -37,11 +37,43 @@ app.listen(PORT, function(){
 })
 ```
 
-This should give you what you need to have a sever and run it on port 3000 in your browser.
+This should give you what you need to have a sever and run it on port 3000 in terminal.
 
 ### In Terminal
 1. run 'nodemon'
 2. run 'npm i ejs'
+3. run 'mkdir views'
+4. CD into views and 'touch index.ejs'
+
+### index.ejs
+1. Load HTML template
+2. create an H1 with some text
+
+### app.js
+1. Add EJS
+2. set path
+``` javascript
+const express = require("express")
+const path = require("path")
+
+const app = express()
+
+console.log(__dirname)
+console.log(path.join(__dirname, "views"))
+
+app.set("views", path.join(__dirname, "views"))
+app.set("view engine", "ejs")
+
+const PORT = process.env.PORT || 3000
+
+app.get("/", function(req, res){
+    res.render("index")
+})
+
+app.listen(PORT, function(){
+    console.log(`Server is now running on PORT: ${PORT}`)
+})
+```
 
 ### Browser
 1. http://localhost:3000/
