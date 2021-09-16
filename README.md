@@ -8,6 +8,7 @@
 * [Nodemon](https://www.npmjs.com/package/nodemon)
 * [GitHub](https://www.github.com)
 * [Express](https://expressjs.com/)
+* [Morgan](https://www.npmjs.com/package/morgan)
 
 
 ## Overview
